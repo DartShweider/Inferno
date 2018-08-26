@@ -1,0 +1,92 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'config.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(951, 650)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.data_Table_Widget = QtWidgets.QTableWidget(self.centralwidget)
+        self.data_Table_Widget.setGeometry(QtCore.QRect(450, 80, 461, 361))
+        self.data_Table_Widget.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.DoubleClicked|QtWidgets.QAbstractItemView.EditKeyPressed)
+        self.data_Table_Widget.setDragEnabled(True)
+        self.data_Table_Widget.setRowCount(0)
+        self.data_Table_Widget.setColumnCount(0)
+        self.data_Table_Widget.setObjectName("data_Table_Widget")
+        self.load_File_RadioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.load_File_RadioButton.setGeometry(QtCore.QRect(140, 400, 121, 22))
+        self.load_File_RadioButton.setObjectName("load_File_RadioButton")
+        self.copy_Table_RadioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.copy_Table_RadioButton.setGeometry(QtCore.QRect(140, 30, 121, 22))
+        self.copy_Table_RadioButton.setObjectName("copy_Table_RadioButton")
+        self.load_And_Display_Button = QtWidgets.QPushButton(self.centralwidget)
+        self.load_And_Display_Button.setGeometry(QtCore.QRect(530, 30, 151, 34))
+        self.load_And_Display_Button.setObjectName("load_And_Display_Button")
+        self.line_1 = QtWidgets.QFrame(self.centralwidget)
+        self.line_1.setGeometry(QtCore.QRect(0, 370, 381, 16))
+        self.line_1.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_1.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_1.setObjectName("line_1")
+        self.line_2 = QtWidgets.QFrame(self.centralwidget)
+        self.line_2.setGeometry(QtCore.QRect(370, 0, 20, 811))
+        self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName("line_2")
+        self.input_Label = QtWidgets.QLabel(self.centralwidget)
+        self.input_Label.setEnabled(True)
+        self.input_Label.setGeometry(QtCore.QRect(190, 70, 41, 18))
+        self.input_Label.setObjectName("input_Label")
+        self.entry_Field_PlainText_Widget = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.entry_Field_PlainText_Widget.setGeometry(QtCore.QRect(50, 90, 311, 261))
+        self.entry_Field_PlainText_Widget.setObjectName("entry_Field_PlainText_Widget")
+        self.path_To_File_Label = QtWidgets.QLabel(self.centralwidget)
+        self.path_To_File_Label.setGeometry(QtCore.QRect(50, 440, 28, 18))
+        self.path_To_File_Label.setObjectName("path_To_File_Label")
+        self.browse_Button = QtWidgets.QPushButton(self.centralwidget)
+        self.browse_Button.setGeometry(QtCore.QRect(280, 460, 84, 31))
+        self.browse_Button.setMouseTracking(True)
+        self.browse_Button.setObjectName("browse_Button")
+        self.name_Of_Sheet_Label = QtWidgets.QLabel(self.centralwidget)
+        self.name_Of_Sheet_Label.setGeometry(QtCore.QRect(40, 520, 90, 18))
+        self.name_Of_Sheet_Label.setObjectName("name_Of_Sheet_Label")
+        self.cell_Range_Label = QtWidgets.QLabel(self.centralwidget)
+        self.cell_Range_Label.setGeometry(QtCore.QRect(220, 520, 62, 18))
+        self.cell_Range_Label.setObjectName("cell_Range_Label")
+        self.name_Of_Sheet_LineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.name_Of_Sheet_LineEdit.setGeometry(QtCore.QRect(40, 540, 141, 32))
+        self.name_Of_Sheet_LineEdit.setObjectName("name_Of_Sheet_LineEdit")
+        self.cell_Range_LineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.cell_Range_LineEdit.setGeometry(QtCore.QRect(220, 540, 141, 32))
+        self.cell_Range_LineEdit.setObjectName("cell_Range_LineEdit")
+        self.path_To_File_lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.path_To_File_lineEdit.setGeometry(QtCore.QRect(40, 460, 221, 32))
+        self.path_To_File_lineEdit.setObjectName("path_To_File_lineEdit")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 951, 30))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Inferno"))
+        self.load_File_RadioButton.setText(_translate("MainWindow", "&Load from file"))
+        self.copy_Table_RadioButton.setText(_translate("MainWindow", "Cop&y table"))
+        self.load_And_Display_Button.setText(_translate("MainWindow", "Load and display"))
+        self.input_Label.setText(_translate("MainWindow", "Input"))
+        self.path_To_File_Label.setText(_translate("MainWindow", "Path"))
+        self.browse_Button.setText(_translate("MainWindow", "Browse..."))
+        self.name_Of_Sheet_Label.setText(_translate("MainWindow", "Name of sheet"))
+        self.cell_Range_Label.setText(_translate("MainWindow", "Cell range"))
+

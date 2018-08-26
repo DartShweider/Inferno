@@ -14,7 +14,10 @@ def create_data_arrays_from_str(data_str):
 
     for symbol in data_str:
         if symbol != '\t' and symbol != '\n':
-            number += symbol
+            if symbol == ',':
+                number += '.'
+            else:
+                number += symbol
             check_multiple_space = 0
 
         elif symbol == '\n':
@@ -86,6 +89,3 @@ def create_data_arrays_from_file(filename, sheetname, cell_range):
             data_arrays[column - first_cell_column].append(float(sheet.cell(row = row, column = column).value))
     print(data_arrays)
     return data_arrays
-
-create_data_arrays_from_file('/home/lenovo/PhysLabs/2_2_1/2_2_1.xlsx', 'Лист1', 'D14:F15')
-create_data_arrays_from_str('0.000\t255.000\t0.000\n24.160\t238.900\t0.065\n')

@@ -86,6 +86,10 @@ def create_data_arrays_from_file(filename, sheetname, cell_range):
         data_arrays.append([])
 
         for row in range(first_cell_row, last_cell_row + 1):
-            data_arrays[column - first_cell_column].append(float(sheet.cell(row = row, column = column).value))
+            data_arrays[column - first_cell_column].append(sheet.cell(row = row, column = column).value)
+    for data_array in data_arrays:
+        for i in range(len(data_array)):
+            if data_array[i] == None:
+                data_array[i] = ''
     print(data_arrays)
     return data_arrays

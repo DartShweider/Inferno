@@ -10,9 +10,9 @@ git clone https://github.com/DartShweider/Inferno
 virtualenv venv
 source venv/bin/activate
 ```
-Запускается проект через файл **main.py**:
+Запускается проект через файл **MainWindow.py**:
 ```bash
-(venv) $ python main.py
+(venv) $ python MainWindow.py
 ```
 
 Использовать виртуальные окружения _необязательно_.

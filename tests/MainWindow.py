@@ -24,6 +24,8 @@ class MainWindow(QtWidgets.QMainWindow, config_main_window.Ui_MainWindow):
         self.actionOpen_file.triggered.connect(self.open_loadFile_dialog)
         self.graphSettings_Button.clicked.connect(self.open_graphSettings_dialog)
         self.graphSettings_Button.clicked.connect(self.create_main_data_arrays)
+        self.add_Rows_Columns_Button.clicked.connect(self.add_rows_columns)
+        self.delete_Rows_Columns_Button.clicked.connect(self.delete_rows_columns)
 
     def create_main_data_arrays(self):
         self.main_data_arrays = []
@@ -35,6 +37,28 @@ class MainWindow(QtWidgets.QMainWindow, config_main_window.Ui_MainWindow):
     def open_graphSettings_dialog(self):
         self.GraphSettingsDialog = GraphSettingsDialog(self)
         self.GraphSettingsDialog.show()
+
+    def add_rows_columns(self):
+        self.data_Table_Widget.setRowCount(self.data_Table_Widget.rowCount() + self.additional_Rows_SpinBox.value())
+        self.data_Table_Widget.setColumnCount(self.data_Table_Widget.columnCount() + self.additional_Columns_SpinBox.value())
+
+    def delete_rows_columns(self):
+        table_rows = self.data_Table_Widget.rowCount()
+        table_columns = self.data_Table_Widget.columnCount()
+        rows_SpinBox_Value = self.additional_Rows_SpinBox.value()
+        columns_SpinBox_Value = self.additional_Columns_SpinBox.value()
+
+        if table_rows > rows_SpinBox_Value:
+            self.data_Table_Widget.setRowCount(table_rows - rows_SpinBox_Value)
+
+        else:
+            self.data_Table_Widget.setRowCount(0)
+
+        if table_columns > columns_SpinBox_Value:
+            self.data_Table_Widget.setColumnCount(table_columns - columns_SpinBox_Value)
+
+        else:
+            self.data_Table_Widget.setColumnCount(0)
 
     def open_enterTable_widget(self):
         self.EnterTableWindow = EnterTableWidget(self)
@@ -49,11 +73,14 @@ class MainWindow(QtWidgets.QMainWindow, config_main_window.Ui_MainWindow):
         self.OptionsWindow.setWindowModality(QtCore.Qt.WindowModal)
         self.OptionsWindow.show()
 
-    def set_size_data_Table_Widget(self, data_arrays):
+    def set_size_data_Table_Widget(self, rows, columns):
+        self.data_Table_Widget.setRowCount(rows + self.additional_Rows_SpinBox.value())
+        self.data_Table_Widget.setColumnCount(columns + self.additional_Columns_SpinBox.value())
+
+    def change_size_data_Table_Widget(self, data_arrays):
         rows = max(len(array) for array in data_arrays)
         columns = len(data_arrays)
-        self.data_Table_Widget.setRowCount(rows + 10)
-        self.data_Table_Widget.setColumnCount(columns + 2)
+        self.set_size_data_Table_Widget(rows, columns)
 
     def fill_data_Table(self, data_arrays):
         for data_array in data_arrays:

@@ -1,6 +1,7 @@
+#!/usr/bin/python3
+
 import sys  # sys нужен для передачи argv в QApplication
 from PyQt5 import QtCore
-from PyQt5 import Qt
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem
 import config_main_window
@@ -32,7 +33,13 @@ class MainWindow(QtWidgets.QMainWindow, config_main_window.Ui_MainWindow):
         for column in range(self.data_Table_Widget.columnCount()):
             self.main_data_arrays.append([])
             for row in range(self.data_Table_Widget.rowCount()):
-                self.main_data_arrays[column].append(self.data_Table_Widget.item(row, column))
+                element = self.data_Table_Widget.item(row, column)
+                if element != None:
+                    self.main_data_arrays[column].append(float(element.text()))
+                else:
+                    self.main_data_arrays[column].append(element)
+
+        print(self.main_data_arrays)
 
     def open_graphSettings_dialog(self):
         self.GraphSettingsDialog = GraphSettingsDialog(self)

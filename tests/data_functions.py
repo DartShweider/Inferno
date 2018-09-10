@@ -91,5 +91,5 @@ def create_data_arrays_from_file(filename, sheetname, cell_range):
         for i in range(len(data_array)):
             if data_array[i] == None:
                 data_array[i] = ''
-    print(data_arrays)
+
     return data_arrays

@@ -18,9 +18,9 @@ class Ui_GraphSettingsDialog(object):
         self.axes_Plot_Table.setRowCount(0)
         self.axes_Plot_Table.setColumnCount(0)
         self.axes_Plot_Table.setObjectName("axes_Plot_Table")
-        self.pushButton = QtWidgets.QPushButton(GraphSettingsDialog)
-        self.pushButton.setGeometry(QtCore.QRect(300, 270, 81, 34))
-        self.pushButton.setObjectName("pushButton")
+        self.plot_Button = QtWidgets.QPushButton(GraphSettingsDialog)
+        self.plot_Button.setGeometry(QtCore.QRect(300, 270, 81, 34))
+        self.plot_Button.setObjectName("plot_Button")
 
         self.retranslateUi(GraphSettingsDialog)
         QtCore.QMetaObject.connectSlotsByName(GraphSettingsDialog)
@@ -28,5 +28,5 @@ class Ui_GraphSettingsDialog(object):
     def retranslateUi(self, GraphSettingsDialog):
         _translate = QtCore.QCoreApplication.translate
         GraphSettingsDialog.setWindowTitle(_translate("GraphSettingsDialog", "Graph settings"))
-        self.pushButton.setText(_translate("GraphSettingsDialog", "Plot"))
+        self.plot_Button.setText(_translate("GraphSettingsDialog", "Plot"))
 
